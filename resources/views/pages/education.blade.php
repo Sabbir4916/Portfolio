@@ -1,80 +1,123 @@
 @extends('layouts.app')
 @section('title', 'Education')
-
 @section('content')
+<div class="edu-wrapper">
+  <div class="edu-header">
+    <h2>My Educational Journey</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="edu-item">
+      <h3>B.Sc in Computer Science & Engineering</h3>
+      <span>Daffodil International University</span>
+      <p>Final-year CSE student specializing in data analysis, machine learning, and web application development.</p>
+    </div>
+
+    <div class="edu-item">
+      <h3>Higher Secondary Certificate (HSC)</h3>
+      <span>Sylhet Govt. College, 2020</span>
+      <p>Group: Science<br>Result: GPA 5.00</p>
+    </div>
+
+    <div class="edu-item">
+      <h3>Secondary School Certificate (SSC)</h3>
+      <span>Sylhet Govt. Pilot High School, 2018</span>
+      <p>Group: Science<br>Result: GPA 5.00</p>
+    </div>
+  </div>
+</div>
+@endsection
+
+@push('styles')
 <style>
   body {
-    background: #f0f4f8;
+    background-color: #edf3f9;
   }
 
-  .education-section {
-    max-width: 720px;
+  .edu-wrapper {
+    max-width: 1000px;
     margin: 60px auto;
-    background: #fff;
-    padding: 50px 40px;
-    border-radius: 14px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    padding: 20px;
   }
 
-  .education-section h2 {
+  .edu-header {
     text-align: center;
-    font-size: 38px;
-    margin-bottom: 40px;
-    color: #1565c0;
-    letter-spacing: 1.1px;
-    font-weight: 700;
+    margin-bottom: 50px;
   }
 
-  .education-item {
-    border-left: 5px solid #1565c0;
-    padding-left: 20px;
+  .edu-header h2 {
+    font-size: 34px;
+    color: #1e3a5f;
+    border-bottom: 3px solid #00bcd4;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+    margin-left: 20px;
+    border-left: 3px dashed #00bcd4;
+  }
+
+  .edu-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px 30px;
     margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
   }
 
-  .education-item h3 {
-    font-size: 24px;
-    margin-bottom: 6px;
+  .edu-item:hover {
+    transform: translateX(5px);
+  }
+
+  .edu-item::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -43px;
+    width: 20px;
+    height: 20px;
+    background-color: #00bcd4;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #00bcd4;
+  }
+
+  .edu-item h3 {
+    font-size: 22px;
+    margin: 0 0 8px;
     color: #0d47a1;
-    font-weight: 600;
   }
 
-  .education-item span {
+  .edu-item span {
     display: block;
+    font-size: 15px;
+    color: #607d8b;
+    margin-bottom: 10px;
     font-style: italic;
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 8px;
   }
 
-  .education-item p {
+  .edu-item p {
     font-size: 16px;
-    line-height: 1.6;
     color: #444;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      padding-left: 20px;
+      margin-left: 10px;
+    }
+
+    .edu-item {
+      padding: 20px;
+    }
   }
 </style>
+@endpush
 
-<section class="education-section">
-  <h2>My Education</h2>
 
-  <div class="education-item">
-    <h3>B.Sc in Computer Science & Engineering</h3>
-    <span>Daffodil International University</span>
-    <p>Final year student focused on Data Analysis, Machine Learning, and Web Development.</p>
-  </div>
-
-  <div class="education-item">
-    <h3>Higher Secondary Certificate (HSC)</h3>
-    <span>Sylhet Govt. College</span>
-    <p>Completed in 2020 in Science.<br>Result: GPA 5.00</p>
-  </div>
-
-  <div class="education-item">
-    <h3>Secondary School Certificate (SSC)</h3>
-    <span>Sylhet Govt. Pilot High School</span>
-    <p>Completed in 2018 in Science.<br>Result: GPA 5.00</p>
-  </div>
-
-</section>
-@endsection

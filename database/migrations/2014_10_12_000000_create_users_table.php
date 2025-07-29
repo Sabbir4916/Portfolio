@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('avatar');
             $table->string('student_id');
+            $table->string('remember_token')->nullable();
             $table->timestamps();
         });
     }
